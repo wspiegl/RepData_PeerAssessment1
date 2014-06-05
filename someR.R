@@ -1,0 +1,1 @@
+steps <- read.csv("./data/activity.csv")
