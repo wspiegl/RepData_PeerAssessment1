@@ -24,12 +24,14 @@ dayPatterns <-
 #    ylab="Step count [per 5-min interval]", xlab="5-minute time interval during the day",
 #    main = "Average daily activity pattern")
 
+
 # more costly with custom labels on tick marks
 plot(dayPatterns, type="l", xaxt="n", xlab="Time")
 axis(1, 
      at <- seq(1, to=288, length.out=10),
      labels <- names(dayPatterns)[seq(1, to=288, length.out=10)],
      las=2)
+
 
 # gimme the index-position (with index-name aka 5-min-interval) of the max-value
 which.max(dayPatterns)
@@ -79,6 +81,7 @@ md <- median(stepsPerDayFilled,na.rm = T)
 
 hist(stepsPerDayFilled)
 
+
 nrow(stepsPerDay)
 nrow(stepsPerDayFilled)
 
@@ -86,7 +89,7 @@ nrow(stepsPerDayFilled)
 ## Are there differences in activity patterns between weekdays and weekends?
 # 1. Create a new factor variable in the dataset with two levels – “weekday”
 # and “weekend” indicating whether a given date is a weekday or weekend day.
-
+print(nrow(steps4impute))
 # calc for weekday or not
 # as.POSIXlt("2012-10-06")$wday %in% c(0,6)
 for ( i in 1:nrow(steps4impute)) {
